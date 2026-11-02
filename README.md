@@ -1,41 +1,33 @@
 # Cherry Cheek — E-Commerce Platform
 
-Cherry Cheek is a modern, responsive, plant-powered cosmetic & skincare e-commerce web application. Built with React and designed with modular styling, this project features dynamic state management via localStorage, role-based access flows (Customer & Admin), and a synchronized local JSON architecture.
+**Cherry Cheek** is a modern, responsive, plant-powered cosmetic & skincare e-commerce web application. Built with React and designed with modular styling, this project features dynamic state management via `localStorage`, role-based access flows (Customer & Admin), and a synchronized local JSON architecture.
 
-# Key Features
+---
 
-# Client / Customer Experience
+## Key Features
 
-Dynamic Catalog & Filtering: Browse skincare and cosmetic products with real-time category filtering and text search.
+### Client / Customer Experience
+- **Dynamic Catalog & Filtering**: Browse skincare and cosmetic products with real-time category filtering and text search.
+- **Product Detail View**: View detailed product specifications, ingredients, stock availability, rating summaries, and multi-size selections.
+- **Cart & Wishlist Synchronization**: Real-time cross-component badge updates (`cartUpdated`, `wishlistUpdated`, and `storage` global event listeners).
+- **Interactive Checkout Flow**:
+  - Live summary calculation with dynamic subtotal, delivery fee, and discount codes (e.g., `BEAUTY10`).
+  - Supports multiple payment methods (Card, ABA PAY, Cash on Delivery, Bank Transfer).
+  - Synchronized state clearing upon order placement.
+- **Responsive Layout**: Hamburger navigation for mobile viewports, sticky header, and scalable footer.
 
-Product Detail View: View detailed product specifications, ingredients, stock availability, rating summaries, and multi-size selections.
+### Admin Dashboard
+- **Inventory Management**: Full CRUD operations for product inventory.
+- **Image File Upload**: Support for converting local image uploads to Base64 data URLs for seamless product previewing and persistence.
+- **Read-Only Detail Modal**: Inspect individual product metrics (SKU, Category, Stock, Pricing).
+- **Real-Time Stock Alerts**: Visual badge indicators for low stock items (< 15 units).
+- **Pagination & Search**: Instant filtering by product name or SKU across paginated tables.
 
-Cart & Wishlist Synchronization: Real-time cross-component badge updates (cartUpdated, wishlistUpdated, and storage global event listeners).
+---
 
-Interactive Checkout Flow:
+## Project Architecture
 
-Live summary calculation with dynamic subtotal, delivery fee, and discount codes (e.g., BEAUTY10).
-
-Supports multiple payment methods (Card, ABA PAY, Cash on Delivery, Bank Transfer).
-
-Synchronized state clearing upon order placement.
-
-Responsive Layout: Hamburger navigation for mobile viewports, sticky header, and scalable footer.
-
-# Admin Dashboard
-
-Inventory Management: Full CRUD operations for product inventory.
-
-Image File Upload: Support for converting local image uploads to Base64 data URLs for seamless product previewing and persistence.
-
-Read-Only Detail Modal: Inspect individual product metrics (SKU, Category, Stock, Pricing).
-
-Real-Time Stock Alerts: Visual badge indicators for low stock items (< 15 units).
-
-Pagination & Search: Instant filtering by product name or SKU across paginated tables.
-
-📂 Project Architecture
-
+```text
 src/
 ├── assets/
 │   └── images/              # Theme logos and default fallback assets
@@ -56,56 +48,55 @@ src/
 │   ├── Dashboard.jsx        # Admin inventory management dashboard
 │   └── ProductDetail.jsx    # Individual product showcase page
 └── App.css                  # Core CSS variables, typography, and dark mode root definitions
+```
 
+---
 
-# Theme & Design System
+## Theme & Design System
 
-The application relies on CSS variables declared in App.css to maintain theme consistency across light and dark modes:
+The application relies on CSS variables declared in `App.css` to maintain theme consistency across light and dark modes:
 
-Primary Color: #1D4533 (Forest Green)
+- **Primary Color**: `#1D4533` (Forest Green)
+- **Secondary Color**: `#FAFAFA`
+- **Typography**: Poppins (`--font-sans`)
+- **Theme Support**: Includes `[data-theme="dark"]` attribute toggling.
 
-Secondary Color: #FAFAFA
+---
 
-Typography: Poppins (--font-sans)
+## Getting Started
 
-Theme Support: Includes [data-theme="dark"] attribute toggling.
+### Prerequisites
+- Node.js (v16+ recommended)
+- npm
 
-# Getting Started
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/cherry-cheek.git
+   cd cherry-cheek
+   ```
 
-Prerequisites
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Node.js (v16+ recommended)
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-npm
+4. Open your browser at `http://localhost:5173` (or your Vite local port).
 
-Installation
+---
 
-Clone the repository:
+## Promo Codes & Features to Try
 
-git clone https://github.com/your-username/cherry-cheek.git
-cd cherry-cheek
+- **Discount Code**: Enter `BEAUTY10` at checkout to apply a 10% discount.
+- **Local Storage Integration**: Add items to your cart or wishlist and notice header counter badges update instantly across all open tabs.
+- **Admin Testing**: Head to the admin dashboard to upload product images directly from your device file picker!
 
+---
 
-Install dependencies:
-
-npm install
-
-
-Start the development server:
-
-npm run dev
-
-
-Open your browser at http://localhost:5173 (or your Vite local port).
-
-# Promo Codes & Features to Try
-
-Discount Code: Enter BEAUTY10 at checkout to apply a 10% discount.
-
-Local Storage Integration: Add items to your cart or wishlist and notice header counter badges update instantly across all open tabs.
-
-Admin Testing: Head to the admin dashboard to upload product images directly from your device file picker!
-
-# License
-
-This project is open-source and available under the MIT License.
+## License
+This project is open-source and available under the [MIT License](LICENSE).
